@@ -44,10 +44,10 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
 const slidein = keyframes`
 from {
-  margin-right: -50%;
+  transform: translateX(100%);
 }
 to {
-  margin-right: 0%;
+  transform: translateX(0%);
 }
 `;
 
@@ -64,7 +64,7 @@ const Overlay = styled(Dialog.Overlay)`
   position: fixed;
   inset: 0;
   background: var(--color-backdrop);
-  animation: ${fadein} 1s linear;
+  animation: ${fadein} 500ms both cubic-bezier(0, 0.6, 0.31, 1.06);
 `;
 
 
@@ -93,7 +93,8 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  animation: ${fadein} 1s linear;
+  animation: ${fadein} 1s both;
+  animation-delay: 200ms;
 `;
 
 const NavLink = styled.a`
@@ -117,7 +118,8 @@ const Footer = styled.footer`
   flex-direction: column;
   gap: 14px;
   justify-content: flex-end;
-  animation: ${fadein} 1s linear;
+  animation: ${fadein} 1s both;
+  animation-delay: 200ms;
 `;
 
 const SubLink = styled.a`

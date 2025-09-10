@@ -57,6 +57,15 @@ to {
 }
 `;
 
+const fadein = keyframes`
+from{
+  opacity: 0;
+}
+to{
+  opacity: 1;
+}
+`;
+
 const Content = styled(Dialog.Content)`
   position: fixed;
   top: 0;
@@ -68,7 +77,7 @@ const Content = styled(Dialog.Content)`
   padding: 24px 32px;
   display: flex;
   flex-direction: column;
-  animation: ${slidein} 1s linear
+  animation: ${slidein} 1s linear;
 `;
 
 const CloseButton = styled(UnstyledButton)`
@@ -82,6 +91,7 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  animation: ${fadein} 1s linear;
 `;
 
 const NavLink = styled.a`
@@ -105,6 +115,7 @@ const Footer = styled.footer`
   flex-direction: column;
   gap: 14px;
   justify-content: flex-end;
+  animation: ${fadein} 1s linear;
 `;
 
 const SubLink = styled.a`

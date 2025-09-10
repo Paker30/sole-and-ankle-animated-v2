@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import * as Dialog from '@radix-ui/react-dialog';
 
 import { QUERIES, WEIGHTS } from '../../constants';
@@ -48,6 +48,15 @@ const Overlay = styled(Dialog.Overlay)`
   background: var(--color-backdrop);
 `;
 
+const slidein = keyframes`
+from {
+  margin-right: -50%;
+}
+to {
+  margin-right: 0%;
+}
+`;
+
 const Content = styled(Dialog.Content)`
   position: fixed;
   top: 0;
@@ -59,6 +68,7 @@ const Content = styled(Dialog.Content)`
   padding: 24px 32px;
   display: flex;
   flex-direction: column;
+  animation: ${slidein} 1s linear
 `;
 
 const CloseButton = styled(UnstyledButton)`

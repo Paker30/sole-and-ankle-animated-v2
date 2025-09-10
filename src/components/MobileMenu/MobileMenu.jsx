@@ -42,12 +42,6 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
   );
 };
 
-const Overlay = styled(Dialog.Overlay)`
-  position: fixed;
-  inset: 0;
-  background: var(--color-backdrop);
-`;
-
 const slidein = keyframes`
 from {
   margin-right: -50%;
@@ -65,6 +59,14 @@ to{
   opacity: 1;
 }
 `;
+
+const Overlay = styled(Dialog.Overlay)`
+  position: fixed;
+  inset: 0;
+  background: var(--color-backdrop);
+  animation: ${fadein} 1s linear;
+`;
+
 
 const Content = styled(Dialog.Content)`
   position: fixed;
